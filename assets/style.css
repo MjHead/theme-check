@@ -2,7 +2,7 @@
 	padding:20px 0;
 	border-top:1px solid #dfdfdf;
 }
-.tc-warning, .tc-required, .tc-fail {
+.tc-warning, .tc-required, .tc-fail, .tc-bug {
 	color:red;
 }
 .tc-recommended, .tc-pass {

@@ -31,7 +31,6 @@ class UnprefixedFuntions implements themecheck {
 			foreach ( $checks as $key => $check ) {
 				checkcount();
 				if ( preg_match_all( $key, $phpfile, $matches ) ) {
-					var_dump( $matches );
 					$filename = tc_filename( $php_key );
 					$this->error[] = sprintf(
 						'<span class="tc-lead tc-warning">' . __( 'WARNING','theme-check' ) . '</span>: ' . __( 'Function with not correct prefix was found in the file %1$s.', 'theme-check' ),

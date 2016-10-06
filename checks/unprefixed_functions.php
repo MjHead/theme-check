@@ -16,7 +16,7 @@ class UnprefixedFuntions implements themecheck {
 			return $ret;
 		}
 
-		$prefix = str_replace( '-', '_', $tex_domain );
+		$prefix = str_replace( '-', '_', strtolower( $tex_domain ) );
 
 		$checks = array(
 			'/[^ ]function (?!' . $prefix . '|__construct)\w*/' => __( 'Incorrect prefix for function', 'theme-check' )

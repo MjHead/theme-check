@@ -10,6 +10,11 @@ class IframeCheck implements themecheck {
 			);
 
 		foreach ( $php_files as $php_key => $phpfile ) {
+
+			if ( false !== strpos( $php_key, 'cherry-framework' ) || false !== strpos( $php_key, 'class-tgm-plugin-activation' ) ) {
+				continue;
+			}
+
 			foreach ( $checks as $key => $check ) {
 				checkcount();
 				if ( preg_match( $key, $phpfile, $matches ) ) {

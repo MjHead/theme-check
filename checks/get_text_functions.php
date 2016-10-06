@@ -8,10 +8,15 @@ class GetTextFunctions implements themecheck {
 		$ret = true;
 
 		$checks = array(
-			'/[\s\=\>\.\(\!o](_[_e])\(/' => __( 'Use only <strong>esc_html__</strong> or <strong>__</strong> translation function', 'theme-check' )
+			'/[\s\=\>\.\(\!o](_[_e])\(/' => __( 'Use only <strong>esc_html__</strong> or <strong>esc_html_e</strong> translation function', 'theme-check' )
 			);
 
 		foreach ( $php_files as $php_key => $phpfile ) {
+
+			if ( false !== strpos( $php_key, 'cherry-framework' ) || false !== strpos( $php_key, 'class-tgm-plugin-activation' ) ) {
+				continue;
+			}
+
 			foreach ( $checks as $key => $check ) {
 				checkcount();
 				if ( preg_match_all( $key, $phpfile, $matches ) ) {

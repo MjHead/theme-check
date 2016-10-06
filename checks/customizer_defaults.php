@@ -45,6 +45,9 @@ class CustomizerDefaults implements themecheck {
 			'ads_post_before_comments',
 			'ads_home_before_loop',
 			'ads_header',
+			'retina_more_button_image_url',
+			'more_button_image_url',
+			'more_button_icon',
 		);
 
 		checkcount();

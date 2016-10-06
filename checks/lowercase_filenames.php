@@ -5,7 +5,6 @@ class LowercaseFilenames implements themecheck {
 	function check( $php_files, $css_files, $other_files ) {
 
 		$ret = true;
-		$filenames = array();
 
 		checkcount();
 

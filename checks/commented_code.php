@@ -16,7 +16,7 @@ class CommentedCode implements themecheck {
 		foreach ( $commented_code as $file ) {
 			$this->error[] = sprintf(
 				'<span class="tc-lead tc-warning">' . __('WARNING','theme-check') . '</span>: ' . esc_html__( 'Maybe commented code in %s', 'theme-check' ),
-				$file
+				'<strong>' . $file . '</strong>'
 			);
 		}
 

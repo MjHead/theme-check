@@ -8,14 +8,15 @@ class FrameworkSetup implements themecheck {
 		$ret = true;
 		global $chery_core_version;
 
+		$message = '<span class="tc-lead tc-warning">' . __( 'WARNING','theme-check' ) . '</span>: ' . __( 'Cherry Framework not included correctly.', 'theme-check' );
+		$message .= ' <strong>' . __( 'Ignore this, if you check not active theme!','theme-check' ) . '</strong>';
+
 		if ( empty( $chery_core_version ) || ! is_array( $chery_core_version  ) ) {
 			$this->error[] = $message;
 			return false;
 		}
 
 		$chery_core_version = array_map( 'wp_normalize_path', $chery_core_version );
-		$message = '<span class="tc-lead tc-warning">' . __( 'WARNING','theme-check' ) . '</span>: ' . __( 'Cherry Framework not included correctly.', 'theme-check' );
-		$message .= ' <strong>' . __( 'Ignore this, if you check not active theme!','theme-check' ) . '</strong>';
 
 		global $themename;
 		$theme_found = false;

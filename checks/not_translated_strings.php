@@ -19,7 +19,7 @@ class NotTranslatedStrings implements themecheck {
 		$prefix = str_replace( '-', '_', strtolower( $tex_domain ) );
 
 		$checks = array(
-			'/[\s][o=>][\s]?[\'\"](?!btn|SELECT|' . $prefix . ')\w+\s/' => __( 'Not translated string', 'theme-check' )
+			'/[\s][o=>][\s]?[\'\"](?!btn|SELECT|' . $prefix . '|tm)\w+\s/' => __( 'Not translated string', 'theme-check' )
 		);
 
 		foreach ( $php_files as $php_key => $phpfile ) {

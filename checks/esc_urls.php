@@ -1,5 +1,5 @@
 <?php
-class AssignInConditional implements themecheck {
+class EscUrls implements themecheck {
 
 	protected $error = array();
 
@@ -10,7 +10,7 @@ class AssignInConditional implements themecheck {
 		$ret = true;
 
 		$checks = array(
-			'/if[\s]?\([\s]?\$[a-zA-Z_0-9]+[\s]?=[\s]?[^\=]/' => __( 'Potentialy assign in conditional statement', 'theme-check' ),
+			'/[\=\,\.\>][\s]?(home_url|admin_url)/' => __( 'Not escaped home_url() or admin_url()', 'theme-check' ),
 		);
 
 		foreach ( $php_files as $php_key => $phpfile ) {
@@ -37,4 +37,4 @@ class AssignInConditional implements themecheck {
 	function getError() { return $this->error; }
 }
 
-$themechecks[] = new AssignInConditional;
+$themechecks[] = new EscUrls;
